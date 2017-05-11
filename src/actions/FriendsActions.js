@@ -20,3 +20,10 @@ export function starFriend(id) {
     id
   };
 }
+
+export function selectSex(payload) {
+  return {
+    type: types.SELECT_SEX,
+    payload
+  };
+}

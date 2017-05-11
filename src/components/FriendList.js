@@ -17,9 +17,7 @@ export default class FriendList extends Component {
           mapValues(this.props.friends, (friend) => {
             return (<FriendListItem
               key={friend.id}
-              id={friend.id}
-              name={friend.name}
-              starred={friend.starred}
+              friend={friend}
               {...this.props.actions} />);
           })
         }

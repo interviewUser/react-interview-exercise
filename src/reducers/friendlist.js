@@ -8,15 +8,18 @@ const initialState = {
   friendsById: {
     1: {
       id: 1,
-      name: 'Theodore Roosevelt'
+      name: 'Theodore Roosevelt',
+      sex: 'male'
     },
     2: {
       id: 2,
-      name: 'Abraham Lincoln'
+      name: 'Abraham Lincoln',
+      sex: ''
     },
     3: {
       id: 3,
-      name: 'George Washington'
+      name: 'George Washington',
+      sex: ''
     }
   }
 };
@@ -51,6 +54,17 @@ export default function friends(state = initialState, action) {
         friendsById: mapValues(state.friendsById, (friend) => {
           return friend.id === action.id ?
             assign({}, friend, { starred: !friend.starred }) :
+            friend
+        })
+      }
+
+    case types.SELECT_SEX:
+      const {id, value} = action.payload;
+      return {
+        ...state,
+        friendsById: mapValues(state.friendsById, (friend) => {
+          return friend.id === id ?
+            assign({}, friend, { sex: value }) :
             friend
         })
       }
