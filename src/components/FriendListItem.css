@@ -8,6 +8,9 @@
 
 :local(.friendInfos) {
   flex: 1 0 auto;
+  max-width: 178px;
+  padding-right: 15px;
+  word-break: break-all;
 }
 
 :local(.friendInfos span) {
@@ -21,6 +24,11 @@
 :local(.btnAction), :local(.btnAction):active, :local(.btnAction):focus, :local(.btnAction):hover {
   margin-right: 5px;
   color: #5C75B0;
+}
+
+:local(.formControl) {
+  margin-top: 5px;
+  padding: 1px;
 }
 
 button:focus {
